@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 3e58c5f370d9a664f97d12566c921dc6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - itemClip: {fileID: 8300000, guid: f690feab5383ef14b8bae298e8dbd587, type: 3}
+  - iceClip: {fileID: 8300000, guid: 6fd0a01d14adf4b42b025651019aec3f, type: 3}
+  - boomClip: {fileID: 8300000, guid: ea0862f875a23d3478fc63273e7955c8, type: 3}
+  - itemUI: {instanceID: 0}
+  - itemText: {instanceID: 0}
+  - playerPointerUI: {instanceID: 0}
+  - playerPointer: {instanceID: 0}
+  - enemyPointer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

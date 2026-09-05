@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9121486cf403c4945acd4704efbd9cf6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerPrefab: {fileID: 694020400433877248, guid: 6818bc7b1d28b574ea54f2f7c1a029c5, type: 3}
+  - scoretext: {instanceID: 0}
+  - timeText: {instanceID: 0}
+  - startButton: {instanceID: 0}
+  - gamestartUI: {instanceID: 0}
+  - restartButton: {instanceID: 0}
+  - gameoverUI: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
