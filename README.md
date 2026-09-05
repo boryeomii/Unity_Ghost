@@ -28,12 +28,39 @@
 
 ---
 
-# 🏗 Network Architecture
+## 🏗 Network Architecture
 
-이 프로젝트에서는 Photon PUN 2의 **MasterClient-authoritative 구조**를 사용했습니다.
+Photon PUN 2의 **MasterClient-authoritative 구조**로 구현했습니다.
 
-플레이어 입력과 이동은 각 플레이어의 Owner가 담당하고,  
+플레이어 입력과 이동은 각 Player Owner가 처리하고,  
 두 플레이어에게 동일하게 유지되어야 하는 공유 게임 상태는 MasterClient가 관리합니다.
+
+| Player Owner | MasterClient |
+|---|---|
+| 플레이어 입력 | 아이템 생성 및 삭제 |
+| 캐릭터 이동 | 아이템 획득 처리 |
+| 이동 관련 아이템 효과 | 점수 및 게임 상태 관리 |
+
+플레이어 위치는 `PhotonTransformView`를 통해 동기화하며,  
+RPC와 `OnPhotonSerializeView`를 이용해 게임 진행에 필요한 상태를 공유합니다.
+
+---
+
+## 🕹 Controls
+
+| Key | Action |
+|---|---|
+| `W` `A` `S` `D` / 방향키 | 캐릭터 이동 |
+| `ESC` | 게임 나가기 |
+
+---
+
+# 🔐 Photon AppId Setup
+
+보안을 위해 이 Repository에는 개인 Photon Realtime AppId를 포함하지 않았습니다.
+
+따라서 프로젝트를 Clone한 뒤 멀티플레이 기능을 실행하려면  
+본인의 Photon Realtime AppId를 `PhotonServerSettings`에 설정해야 합니다.
 
 ---
 
@@ -96,13 +123,3 @@ MasterClient의 최종 Destroy 응답을 기다리는 동안
 게임 시작 시 Room을 닫아 중도 참가를 차단했습니다.
 또한 2인 게임 특성상 게임 도중 한 플레이어가 퇴장하면  
 남은 플레이어 역시 Room에서 나가 Lobby로 복귀하도록 처리했습니다.
-
----
-
-# 🔐 Photon AppId Setup
-
-보안을 위해 이 Repository에는 개인 Photon Realtime AppId를 포함하지 않았습니다.
-
-따라서 프로젝트를 Clone한 뒤 멀티플레이 기능을 실행하려면  
-본인의 Photon Realtime AppId를 `PhotonServerSettings`에 설정해야 합니다.
-
